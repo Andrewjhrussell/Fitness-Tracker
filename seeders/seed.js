@@ -6,13 +6,6 @@ mongoose.connect("mongodb://localhost/workout", {
   useFindAndModify: false
 });
 
-//Drew Code//
-mongoose.connection.once("open",function(){
-  console.log("Connection MADE DREW");
-}).on("error",function(error){
-  console.log("Connection error:",error);
-});
-//////////
 
 let workoutSeed = [
   {
