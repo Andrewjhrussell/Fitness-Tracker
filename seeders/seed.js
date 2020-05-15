@@ -6,6 +6,14 @@ mongoose.connect("mongodb://localhost/workout", {
   useFindAndModify: false
 });
 
+//Drew Code//
+mongoose.connection.once("open",function(){
+  console.log("Connection MADE DREW");
+}).on("error",function(error){
+  console.log("Connection error:",error);
+});
+//////////
+
 let workoutSeed = [
   {
     day: new Date().setDate(new Date().getDate()-10),
@@ -145,3 +153,11 @@ db.Workout.deleteMany({})
     console.error(err);
     process.exit(1);
   });
+
+
+  // routes
+//app.use(require("./routes/api.js"));
+
+//app.listen(PORT, () => {
+ // console.log(`App running on port ${PORT}!`);
+//});
